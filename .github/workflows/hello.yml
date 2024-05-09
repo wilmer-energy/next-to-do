@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  hello-worl:
+  hello-world:
     runs-on: ubuntu-18.04
     steps:
       - name: Saludar
-        run: echo Hola mundo
+        run: echo "Hola mundo"
