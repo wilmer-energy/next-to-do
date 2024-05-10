@@ -20,8 +20,7 @@ jobs:
           - ./postgres:/var/lib/postgresql/data
         options: >-
           --name todos-db
-          --restart
-          always
+          --restart always
           -d
     steps:
       - name: Checkout code
