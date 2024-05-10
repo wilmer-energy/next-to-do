@@ -1,7 +1,7 @@
 name: PostgreSQL service example
 on: push
 env:
-  DATABASE_URL: ${{ vars.DATABASE_URL}}
+  DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
 jobs:
   # Label of the container job
   container-job:
