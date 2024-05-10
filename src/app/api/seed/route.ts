@@ -1,6 +1,7 @@
 import prisma from '@/lib/prisma';
 import { NextResponse, NextRequest } from 'next/server'
 import bcrypt from 'bcryptjs';
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request) { 
 
