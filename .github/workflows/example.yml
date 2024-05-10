@@ -8,16 +8,21 @@ env:
 jobs:
   postgres-image:
     runs-on: ubuntu-latest
-    container:
-      image: postgres:15.3
-      ports:
-        - 5432:5432
-      env:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: postgres
-      volumes:
-        - ./postgres:/var/lib/postgresql/data
-      options: --name todos-db --restart always
+    services:
+      postgres:
+        image: postgres:15.3
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        volumes:
+          - ./postgres:/var/lib/postgresql/data
+        options: >-
+          --name todos-db
+          --restart
+          always
+          -d
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
