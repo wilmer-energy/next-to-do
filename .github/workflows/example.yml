@@ -6,9 +6,18 @@ on:
       - main
 
 jobs:
-  deploy:
+  postgres-image:
     runs-on: ubuntu-latest
-
+    container:
+      image: postgres:15.3
+      ports:
+        - 5432:5432
+      env:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+      volumes:
+        - ./postgres:/var/lib/postgresql/data
+      options: --name todos-db --restart always
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -23,23 +32,3 @@ jobs:
 
       - name: Generate Prisma Client
         run: npx prisma generate
-      - name: cache
-        uses: actions/cache@v4
-        with:
-          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
-          path: |
-            ~/.npm
-            ${{ github.workspace }}/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key:
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
-            # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-      - name: Build Next.js app
-        run: npm run build
-
-      - name: Deploy to Vercel
-        run: npx vercel --prod
-
-      # Add additional steps if needed, like running migrations
