@@ -8,18 +8,6 @@ on:
 jobs:
   hello-world:
     runs-on: ubuntu-latest
-    services:
-      todosDB:
-        image: postgres:15.3
-        #container_name: todos-db
-        #restart: always
-        ports:
-          - 5432:5432
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-        volumes:
-          - ./postgres:/var/lib/postgresql/data
     steps:
       - name: Saludar
         run: echo "Hola mundo"
@@ -33,3 +21,15 @@ jobs:
         run: npm install
       - name: Arrancar
         run: npm start
+    services:
+      todosDB:
+        image: postgres:15.3
+        #container_name: todos-db
+        #restart: always
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        volumes:
+          - ./postgres:/var/lib/postgresql/data
