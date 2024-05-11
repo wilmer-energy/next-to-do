@@ -34,6 +34,8 @@ jobs:
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # Performs a clean installation of all dependencies in the `package.json` file
       # For more information, see https://docs.npmjs.com/cli/ci.html
@@ -48,7 +50,9 @@ jobs:
         run: npx prisma migrate deploy
       - name: Prisma CLI
         run: npx prisma generate
-      - uses: akhileshns/heroku-deploy@v3.13.15 # This is the action
+      - name: deploy heroku
+        if: ${{ github.event_name == 'push' }}
+        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
