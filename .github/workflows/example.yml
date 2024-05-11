@@ -35,6 +35,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: deploy heroku
+        if: ${{ github.event_name == 'push' }}
+        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
       - name: Install dependencies
         run: npm install
 
@@ -44,10 +51,3 @@ jobs:
         run: npx prisma migrate deploy
       - name: Prisma CLI
         run: npx prisma generate
-      - name: deploy heroku
-        if: ${{ github.event_name == 'push' }}
-        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
