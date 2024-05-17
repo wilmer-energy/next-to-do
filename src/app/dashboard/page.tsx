@@ -24,7 +24,7 @@ export default async function DashboardPage() {
     <div className="grid gap-6 grid-cols-1 ">
       <WidgetItem title="User S-Side">
         <div className="flex flex-row justify-center gap-10">
-          <Image src={logoJpg}
+          <Image src={setUrlImage()}
             className="rounded-lg"
             alt="tailus logo"
             width={150}

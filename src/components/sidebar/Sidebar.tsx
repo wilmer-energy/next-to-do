@@ -64,9 +64,9 @@ export const Sidebar = async () => {
           {/* TODO: Next/Link hacia dashboard */}
           <Link href="#" title="home">
             {/* Next/Image */}
-            <Image src="https://tailus.io/sources/blocks/stats-cards/preview/images/logo.svg"
+            <Image src={logoPng}
               className="w-32"
-              alt="tailus logo"
+              alt="wilmerdev logo"
               width={150}
               height={150}
             />
