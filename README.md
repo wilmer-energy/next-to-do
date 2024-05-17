@@ -1,26 +1,49 @@
+# How to use it
+Todo next It is software with academic reasons which helps you manage and organize tasks in a safe and reliable way.
+
+- You can log in with your Google account, github, or by entering your credentials. If you do not have credentials, the system will create a user for you.
+
+![imagen](https://github.com/wilmer-energy/next_test/assets/96258090/1769294c-7c0c-4168-8319-3a99690087cb)
+
+- You can add your task, and when you complete it, you can click on check. You can delete all completed tasks with the Delete tasks completed button.
+
+![imagen](https://github.com/wilmer-energy/next_test/assets/96258090/41c2d576-5524-49e8-815c-f74c169219ac)
+
+- In the items section you can see a list of trial items which you can add to your shopping cart.
+
+![imagen](https://github.com/wilmer-energy/next_test/assets/96258090/5956dc66-385a-4129-a1d4-d7df00c9ad2d)
+
+- In the shopping cart you can see all the added items and edit them.
+
+![imagen](https://github.com/wilmer-energy/next_test/assets/96258090/06f63dd8-bd06-4f86-9a70-c771588349a2)
+
+- You can send me an feedback email, or want my services.
+
+![imagen](https://github.com/wilmer-energy/next_test/assets/96258090/30e36821-fbec-4674-a96f-82eb00def573)
+
 # Development
-Pasos para levantar la app en desarrollo
+Steps to build the app in development
 
 
-1. Levantar la base de datos
+1. Create the database
 ```
 docker compose up -d
 ```
 
-2. Crear una copia de el .env.template y renombrarlo a .env
-3. Reemplazar las variables de entorno
-4. Ejecutar el comando ```npm install``` para reconstruir los módulos de node
-5. Ejecutar el comando ```npm run dev``` para ejecutar aplicación en desarrollo
-6. Ejecutar estos comandos de Prisma
+2. Create a copy of .env.template and rename it to .env
+3. Replace environment variables
+4. Run the command ```npm install```
+5. Run the command ```npm run dev```
+6. Run these Prisma commands
 ```
 npx prisma migrate dev
 npx prisma generate
 ```
-7. Ejecutar el SEED para [crear la base de datos local](localhost:3000/api/seed)
+7. Run the SEED to [create local database](localhost:3000/api/seed)
 
 
-## Nota: Usuario por defecto
-__usuario:__  test1@google.com
+## Note: Default user
+__user:__  test1@google.com
 __password:__ 123456
 
 
@@ -30,7 +53,6 @@ npx prisma init
 npx prisma migrate dev
 npx prisma generate
 
-```
 
 
 
