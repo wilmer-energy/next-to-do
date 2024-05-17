@@ -41,7 +41,7 @@ export default function CartPage() {
 
   return (
     <div>
-      <h1 className="text-5xl">Productos en el carrito</h1>
+      <h1 className="text-5xl">Items in cart</h1>
       <hr className="mb-2" />
 
       <div className="flex flex-col sm:flex-row gap-2 w-full">
@@ -55,11 +55,11 @@ export default function CartPage() {
         </div>
 
         <div className="flex flex-col w-full sm:w-4/12">
-            <WidgetItem title="Total a pagar">
+            <WidgetItem title="Total to pay">
               <div className="mt-2 flex justify-center gap-4">
                 <h3 className="text-3xl font-bold text-gray-700">${ (totalToPay * 1.15).toFixed(2) }</h3>
               </div>
-              <span className="font-bold text-center text-gray-500">Impuestos 15%: ${ (totalToPay * 0.15).toFixed(2) }</span>
+              <span className="font-bold text-center text-gray-500">Taxes 15%: ${ (totalToPay * 0.15).toFixed(2) }</span>
             </WidgetItem>
         </div>
 

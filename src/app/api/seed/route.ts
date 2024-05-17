@@ -15,28 +15,14 @@ export async function GET(request: Request) {
       roles: ['admin','client','super-user'],
       todos: {
         create: [
-          { description: 'Piedra del alma', complete: true },
-          { description: 'Piedra del poder' },
-          { description: 'Piedra del tiempo' },
-          { description: 'Piedra del espacio' },
-          { description: 'Piedra del realidad' },
+          { description: 'Space stone', complete: true },
+          { description: 'Mind stone' },
+          { description: 'Reality stone' },
+          { description: 'Power stone' },
+          { description: 'Time stone' },
         ]
       }
     }
   });
-
-
-  // await prisma.todo.createMany({
-  //   data: [
-  //     { description: 'Piedra del alma', complete: true },
-  //     { description: 'Piedra del poder' },
-  //     { description: 'Piedra del tiempo' },
-  //     { description: 'Piedra del espacio' },
-  //     { description: 'Piedra del realidad' },
-  //   ]
-  // })
- 
-  
-
   return NextResponse.json({ message: 'Seed Executed' });
 }
