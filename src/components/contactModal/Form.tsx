@@ -19,7 +19,7 @@ interface Props {
     setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 export default function Form({ setOpen }: Props) {
-    const methods = createForm();
+    const methods = useCreateForm();
     const {
         register,
         handleSubmit,
@@ -57,7 +57,7 @@ export default function Form({ setOpen }: Props) {
         </>
     );
 }
-function createForm(): UseFormReturn<Inputs, any, undefined> {
+function useCreateForm(): UseFormReturn<Inputs, any, undefined> {
     const schema = yup.object().shape({
         name: yup
             .string()
