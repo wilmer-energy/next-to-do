@@ -65,10 +65,10 @@ export const Sidebar = async () => {
           <Link href="#" title="home">
             {/* Next/Image */}
             <Image src={logoPng}
-              className="w-32"
+              className="w-10"
               alt="wilmerdev logo"
-              width={150}
-              height={150}
+              width={80}
+              height={80}
             />
           </Link>
         </div>
@@ -77,8 +77,8 @@ export const Sidebar = async () => {
 
           <Image
             src={avatarUrl}
-            width={150}
-            height={150}
+            width={70}
+            height={70}
             alt=""
             className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"
           />
