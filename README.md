@@ -2,19 +2,20 @@
 -	Development:
 1.	Prisma: https://www.prisma.io/ 
 2.	Postgres: https://www.postgresql.org/ 
-3.	Next JS: https://nextjs.org/ 
-4.	Email JS: https://www.emailjs.com/ 
-5.	React hook form: https://react-hook-form.com/ 
-6.	Yup validator: https://www.npmjs.com/package/yup 
-7.	Typescript: https://www.typescriptlang.org/ 
-8.	NextAuth.js: https://next-auth.js.org/ 
+3.	Docker: https://www.docker.com/ 
+4.	Next JS: https://nextjs.org/ 
+5.	Email JS: https://www.emailjs.com/ 
+6.	React hook form: https://react-hook-form.com/ 
+7.	Yup validator: https://www.npmjs.com/package/yup 
+8.	Typescript: https://www.typescriptlang.org/ 
+9.	NextAuth.js: https://next-auth.js.org/ 
 -	UI:
-9.	Mui material: https://mui.com/ 
-10.	tailwind UI: https://tailwindui.com/ 
-11.	Tailwind: https://tailwindcss.com/ 
+10.	Mui material: https://mui.com/ 
+11.	tailwind UI: https://tailwindui.com/ 
+12.	Tailwind: https://tailwindcss.com/ 
 -	Production:
-12.	Vercel: https://vercel.com
-13.	GitHub actions: https://docs.github.com/es/actions 
+13.	Vercel: https://vercel.com
+14.	GitHub actions: https://docs.github.com/es/actions 
 
 # How to use it
 Todo next It is software with academic reasons which helps you manage and organize tasks in a safe and reliable way.
@@ -70,11 +71,3 @@ __password:__ 123456
 npx prisma init
 npx prisma migrate dev
 npx prisma generate
-
-
-
-
-# Prod
-
-
-# Stage
